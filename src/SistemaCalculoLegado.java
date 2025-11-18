@@ -1,25 +1,21 @@
-/**
- * Sistema legado que calcula sueldos usando una interfaz diferente
- * Esta clase simula un sistema antiguo con métodos incompatibles
- */
 public class SistemaCalculoLegado {
-
     public double obtenerSueldoBasePorTipo(String tipo, String contrato) {
+        double base = 0;
         if (tipo.equals("OBRAS")) {
-            return contrato.equals("ESTABLE") ? 4000 : 2000;
+            base = contrato.equals("ESTABLE") ? 3500.0 : 3000.0;
         } else if (tipo.equals("VIAS")) {
-            return contrato.equals("ESTABLE") ? 6000 : 4500;
+            base = contrato.equals("ESTABLE") ? 4000.0 : 3500.0;
         }
-        return 0;
+        return base;
     }
 
-    public double aplicarDescuentoTotal(double monto) {
-        double afp = monto * 0.15;
-        double snp = monto * 0.08;
-        return afp + snp;
+    public double aplicarDescuentoTotal(double sueldoBase) {
+        double afp = sueldoBase * 0.13;
+        double seguro = sueldoBase * 0.09;
+        return afp + seguro;
     }
 
-    public double sumarConceptos(double base, double bono, double movilidad) {
-        return base + bono + movilidad;
+    public double sumarConceptos(double sueldoBase, double bonificacion, double movilidad) {
+        return sueldoBase + bonificacion + movilidad;
     }
 }
