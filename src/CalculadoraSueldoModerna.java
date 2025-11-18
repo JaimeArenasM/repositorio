@@ -1,6 +1,3 @@
-/**
- * Interfaz moderna para el cálculo de sueldos
- */
 public interface CalculadoraSueldoModerna {
     double calcularSueldoBase(Arquitecto arquitecto);
     double calcularBonificacion(Arquitecto arquitecto);

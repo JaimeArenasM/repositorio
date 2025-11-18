@@ -1,11 +1,5 @@
-/**
- * PATRÓN FACTORY
- * Patrón Creacional que encapsula la creación de objetos CalculadorBonificacion
- * según la especialidad del arquitecto, permitiendo crear instancias sin 
- * exponer la lógica de creación al cliente.
- */
 public class BonificacionFactory {
-
+    
     public static CalculadorBonificacion crearCalculador(Especialidad especialidad) {
         switch (especialidad) {
             case ESTRUCTURAS:
@@ -18,8 +12,7 @@ public class BonificacionFactory {
                 throw new IllegalArgumentException("Especialidad no válida: " + especialidad);
         }
     }
-
-    // Método adicional que retorna información sobre el porcentaje
+    
     public static double obtenerPorcentaje(Especialidad especialidad) {
         switch (especialidad) {
             case ESTRUCTURAS: return 16.0;
